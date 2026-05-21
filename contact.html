@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>संपर्क | श्री भागवत कथामृत</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    .contact-hero {
+      padding: 120px 0 60px 0;
+      text-align: center;
+      background: radial-gradient(circle at top center, rgba(17, 58, 48, 0.15) 0%, transparent 60%);
+    }
+    
+    .contact-wrapper {
+      max-width: 600px;
+      margin: 0 auto 100px auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 40px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .contact-icon {
+      color: var(--accent-gold);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    
+    .contact-details h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--text-cream);
+      font-family: var(--font-body);
+      font-weight: 500;
+    }
+    
+    .contact-details p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 1.1rem; /* Increased size to balance */
+    }
+    
+    .contact-details a {
+      color: var(--accent-gold);
+      transition: var(--transition-smooth);
+    }
+    
+    .contact-details a:hover {
+      color: var(--accent-gold-hover);
+    }
+    
+    /* CTA Card Styles */
+    .cta-card {
+      max-width: 600px;
+      margin: 0 auto 100px auto;
+      background: rgba(5, 34, 25, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-top: 1px solid var(--accent-gold); /* Subtle top glow */
+      box-shadow: 0 -15px 40px rgba(212, 175, 55, 0.08), 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+    }
+    
+    .cta-title {
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+      font-family: var(--font-heading);
+      font-weight: 500;
+    }
+    
+    .cta-desc {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-wa-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #25D366;
+      color: white;
+      border: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      border-radius: 40px;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-wa-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+    }
+    
+    .btn-wa-pill img {
+      width: 28px; /* Increased size significantly to fix small WhatsApp logo */
+      height: 28px;
+      margin-right: 10px;
+    }
+    
+    .btn-call-pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      border-radius: 40px;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: rgba(212, 175, 55, 0.05);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-call-pill:hover {
+      background: rgba(212, 175, 55, 0.15);
+      transform: translateY(-3px);
+    }
+    
+    }
+    
+    .btn-call-pill i {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      color: #ff4757;
+    }
+
+    .btn-gold-pill {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(212, 175, 55, 0.1);
+      color: #d4af37;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 40px;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+    .btn-gold-pill:hover {
+      background: rgba(212, 175, 55, 0.2);
+      transform: translateY(-3px);
+    }
+
+    /* Redesigned Contact Grid Alignment & Animation */
+    .contact-wrapper {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(17, 58, 48, 0.4), rgba(3, 10, 8, 0.6));
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 35px 25px;
+      border-radius: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      animation: slideUpFade 0.8s ease backwards;
+    }
+
+    .contact-item:nth-child(1) { animation-delay: 0.1s; }
+    .contact-item:nth-child(2) { animation-delay: 0.3s; }
+    .contact-item:nth-child(3) { animation-delay: 0.5s; }
+    .contact-item:nth-child(4) { animation-delay: 0.7s; }
+
+    @keyframes slideUpFade {
+      0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .contact-item:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(212, 175, 55, 0.05);
+    }
+    
+    .contact-icon {
+      margin-bottom: 20px !important;
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+    }
+
+    .contact-item:hover .contact-icon {
+      transform: scale(1.15) rotate(5deg);
+      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar scrolled">
+    <div class="container nav-content">
+      <div class="logo">
+        <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत" style="height: 80px; width: auto;">
+      </div>
+      <div class="nav-links">
+        <a href="index.html">मुख्य पृष्ठ</a>
+        <a href="read.html">पुस्तक पढ़ें</a>
+        <a href="yatra.html">भागवत यात्रा</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="b-nav-item">
+      <i data-lucide="home"></i>
+      <span>मुख्य पृष्ठ</span>
+    </a>
+    <a href="read.html" class="b-nav-item">
+      <i data-lucide="book-open"></i>
+      <span>पढ़ें</span>
+    </a>
+    <a href="contact.html" class="b-nav-item active">
+      <i data-lucide="phone"></i>
+      <span>संपर्क</span>
+    </a>
+  </nav>
+
+  <main>
+    <section class="contact-hero cinematic-reveal" style="padding-top: 140px;">
+      <div class="container">
+        <h1 class="hero-title">संपर्क विवरण</h1>
+        <p class="hero-subtitle" style="margin-bottom: 0;">पुस्तक से संबंधित किसी भी जानकारी या आर्डर के लिए संपर्क करें।</p>
+      </div>
+    </section>
+
+    <section class="container cinematic-reveal delay-1">
+      <div class="contact-wrapper">
+        
+        <div class="contact-item">
+          <i data-lucide="user" class="contact-icon" style="width: 28px; height: 28px;"></i>
+          <div class="contact-details">
+            <p style="font-size: 1.3rem; color: var(--text-cream); font-weight: 500; margin-top: 2px;">राजेश अग्रवाल</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <!-- WhatsApp logo intentionally given 34px to combat internal padding and match 28px icons visually -->
+          <img src="logo.png" alt="WhatsApp" class="contact-icon" style="width: 34px; height: 34px; margin-right: 18px; margin-top: 0;">
+          <div class="contact-details">
+            <h3 style="font-size: 1.15rem;">WhatsApp / Phone</h3>
+            <p><a href="https://wa.me/919828039262" target="_blank">+91 98280 39262</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <!-- Instagram logo given 30px to match standard icon weight -->
+          <img src="insta logo.jpeg" alt="Instagram" class="contact-icon" style="width: 30px; height: 30px; border-radius: 6px; margin-right: 18px; margin-top: 2px;">
+          <div class="contact-details">
+            <h3 style="font-size: 1.15rem;">Instagram</h3>
+            <p><a href="https://instagram.com/bhagwatkathamrit.in" target="_blank">@bhagwatkathamrit.in</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i data-lucide="map-pin" class="contact-icon" style="width: 28px; height: 28px;"></i>
+          <div class="contact-details">
+            <h3 style="font-size: 1.15rem;">Address</h3>
+            <p>6-A-1, जवाहर नगर<br>श्रीगंगानगर – 335001<br>राजस्थान</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- New CTA Card Section -->
+    <section class="container cinematic-reveal delay-2">
+      <div class="cta-card">
+        <h2 class="cta-title">🙏 पुस्तक प्राप्त करें</h2>
+        <p class="cta-desc">WhatsApp पर संपर्क करें और घर बैठे पुस्तक प्राप्त करें। थोक ऑर्डर पर विशेष छूट।</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/919828039262?text=नमस्ते 🙏 मुझे थोक में श्री भागवत कथामृत पुस्तक ऑर्डर करनी है।" target="_blank" class="btn-gold-pill">
+            <i data-lucide="package" style="color: #d4af37; width: 24px; height: 24px; margin-right: 10px;"></i> थोक ऑर्डर करें
+          </a>
+          <a href="tel:+919828039262" class="btn-call-pill">
+            <i data-lucide="phone" style="color: #ff4757;"></i> कॉल
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Floating CTAs -->
+  <div class="global-floating-ctas">
+    <!-- Order CTA -->
+    <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" class="float-cta-btn">
+      <div class="float-bubble order">जय श्री कृष्ण 🙏 अपनी पुस्तक प्राप्त करें</div>
+      <div class="float-icon-wrapper order">
+        <i data-lucide="shopping-bag" style="color: white; width: 24px; height: 24px;"></i>
+      </div>
+    </a>
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/919828039262?text=राधे राधे 🙏 मुझे श्री भागवत कथामृत पुस्तक के बारे में जानकारी चाहिए।" target="_blank" class="float-cta-btn">
+      <div class="float-bubble whatsapp">राधे राधे 🙏 पुस्तक की जानकारी चाहिए?</div>
+      <div class="float-icon-wrapper whatsapp">
+        <img src="logo.png" alt="WhatsApp" style="width: 28px; height: 28px;">
+      </div>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">श्री भागवत कथामृत</div>
+      <p class="copyright">© 2026 सर्वाधिकार सुरक्षित।</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

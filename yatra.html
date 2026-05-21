@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>भागवत यात्रा | श्री भागवत कथामृत</title>
+  <meta name="description" content="श्रीमद्भागवत महापुराण का दिव्य आध्यात्मिक अनुभव। भगवान श्रीकृष्ण के दिव्य प्रेम, भक्ति, और जीवन दर्शन का अमृत स्रोत।">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* Custom yatra.html Styles */
+    html {
+      scroll-padding-top: 100px;
+    }
+    body {
+      background-image: none; /* override body theme.jpeg to use per-section backgrounds */
+      background-color: var(--bg-deep-black);
+    }
+    
+    /* Yatra specific navigation adjustments */
+    .yatra-nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(2, 15, 11, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    }
+    
+    .yatra-nav-links {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 0 20px;
+      scrollbar-width: none; /* Firefox */
+    }
+    .yatra-nav-links::-webkit-scrollbar { display: none; } /* Chrome */
+    
+    .yatra-nav-links a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .yatra-nav-links a:hover, .yatra-nav-links a.active {
+      color: var(--accent-gold);
+      background: rgba(212, 175, 55, 0.1);
+    }
+    
+    /* Hero Section */
+    .yatra-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 40px;
+      background: 
+        linear-gradient(to bottom, rgba(2, 15, 11, 0.7), rgba(2, 15, 11, 1)),
+        url('theme.jpeg') center/cover fixed;
+      position: relative;
+    }
+    .yatra-hero-title {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-family: var(--font-heading);
+      background: linear-gradient(to bottom, #fff, var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 20px rgba(212,175,55,0.3));
+    }
+    .yatra-hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 32px;
+      letter-spacing: 1px;
+    }
+    .yatra-hero-desc {
+      max-width: 800px;
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--text-cream);
+      margin-bottom: 48px;
+      opacity: 0.9;
+    }
+    
+    /* Section Formatting */
+    .yatra-section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .yatra-section-title {
+      font-size: 2.5rem;
+      color: var(--accent-gold);
+      text-align: center;
+      margin-bottom: 60px;
+      font-family: var(--font-heading);
+    }
+    
+    /* Typography & Content */
+    .yatra-text {
+      font-size: 1.25rem;
+      line-height: 2;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    
+    .yatra-highlight {
+      font-size: 1.4rem;
+      color: var(--accent-gold);
+      font-family: var(--font-heading);
+      font-style: italic;
+      text-align: center;
+      margin: 40px 0;
+      padding: 20px;
+      border-left: 2px solid var(--accent-gold);
+      border-right: 2px solid var(--accent-gold);
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,0.05), transparent);
+    }
+    
+    /* Card Layouts */
+    .yatra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    
+    .yatra-card {
+      background: rgba(5, 34, 25, 0.4);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(10px);
+    }
+    .yatra-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+    .yatra-card i {
+      color: var(--accent-gold);
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+    }
+    .yatra-card:hover i {
+      transform: scale(1.1);
+      color: #fff;
+      filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+    }
+    .yatra-card h3 {
+      font-size: 1.4rem;
+      color: var(--text-cream);
+      margin-bottom: 16px;
+    }
+    .yatra-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+    
+    /* Divider */
+    .yatra-divider {
+      width: 100px;
+      height: 2px;
+      background: var(--accent-gold);
+      margin: 0 auto 40px;
+      opacity: 0.5;
+    }
+    
+    /* Parallax Blocks */
+    .yatra-parallax {
+      background: 
+        linear-gradient(to bottom, var(--bg-deep-black), transparent, var(--bg-deep-black)),
+        url('theme.jpeg') center/cover fixed;
+      padding: 120px 20px;
+      text-align: center;
+    }
+    
+    /* Cinematic Quotes */
+    .yatra-quote {
+      font-size: 2rem;
+      line-height: 1.6;
+      color: var(--text-cream);
+      font-family: var(--font-heading);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 80px;
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+    .yatra-quote:last-child {
+      margin-bottom: 0;
+    }
+    .yatra-quote span {
+      color: var(--accent-gold);
+      font-size: 3rem;
+      vertical-align: middle;
+      line-height: 0;
+    }
+    
+    /* Footer CTA */
+    .yatra-cta-section {
+      background: rgba(3, 21, 15, 0.9);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Custom pill buttons (imported mostly from contact.html logic) */
+    .btn-wa-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #25D366;
+      color: white;
+      border: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      border-radius: 40px;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+    .btn-wa-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+    }
+    .btn-wa-pill img {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+    }
+    
+    .btn-call-pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      border-radius: 40px;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: rgba(212, 175, 55, 0.05);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+    .btn-call-pill:hover {
+      background: rgba(212, 175, 55, 0.15);
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .yatra-section-title { font-size: 2rem; }
+      .yatra-quote { font-size: 1.5rem; }
+      .yatra-hero-title { font-size: 3rem; }
+      .yatra-hero-subtitle { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="b-nav-item">
+      <i data-lucide="home"></i>
+      <span>मुख्य पृष्ठ</span>
+    </a>
+    <a href="read.html" class="b-nav-item">
+      <i data-lucide="book-open"></i>
+      <span>पढ़ें</span>
+    </a>
+    <a href="contact.html" class="b-nav-item">
+      <i data-lucide="phone"></i>
+      <span>संपर्क</span>
+    </a>
+  </nav>
+
+  <!-- Top Navigation -->
+  <nav class="yatra-nav">
+    <div class="yatra-nav-links">
+      <a href="index.html">← मुख्य पृष्ठ</a>
+      <a href="#intro" class="yatra-link">परिचय</a>
+      <a href="#importance" class="yatra-link">महत्व</a>
+      <a href="#bhakti" class="yatra-link">श्रीकृष्ण भक्ति</a>
+      <a href="#parayan" class="yatra-link">सप्ताह पारायण</a>
+      <a href="#benefits" class="yatra-link">लाभ</a>
+      <a href="#quotes" class="yatra-link">उद्धरण</a>
+      <a href="#contact" class="yatra-link">संपर्क</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="yatra-hero" style="padding-top: 140px;">
+    <h1 class="yatra-hero-title reveal">भागवत यात्रा</h1>
+    <h2 class="yatra-hero-subtitle reveal">श्रीमद्भागवत महापुराण का दिव्य आध्यात्मिक अनुभव</h2>
+    <p class="yatra-hero-desc reveal">
+      श्रीमद्भागवत केवल एक धार्मिक ग्रंथ नहीं, बल्कि भगवान श्रीकृष्ण के दिव्य प्रेम, भक्ति, ज्ञान और जीवन दर्शन का अमृत स्रोत है। यह ग्रंथ मानव जीवन को सत्य, प्रेम, करुणा और ईश्वर भक्ति की ओर प्रेरित करता है।
+    </p>
+    <div class="reveal">
+      <a href="read.html" class="btn-call-pill" style="margin-right: 20px;">
+        <i data-lucide="book-open" style="width: 24px; height: 24px; margin-right: 10px;"></i> भागवत पढ़ें
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 1 -->
+  <section id="intro" class="yatra-section reveal">
+    <h2 class="yatra-section-title">श्रीमद्भागवत क्या है?</h2>
+    <div class="yatra-divider"></div>
+    <p class="yatra-text">
+      श्रीमद्भागवत महापुराण भारतीय वाङ्मय का एक दिव्य एवं श्रेष्ठ ग्रंथ माना जाता है। इसमें भगवान श्रीकृष्ण की दिव्य लीलाओं, भक्ति, ज्ञान, धर्म और जीवन के गहन रहस्यों का वर्णन मिलता है।
+    </p>
+    <p class="yatra-text">
+      वेदव्यास जी द्वारा रचित यह महापुराण लगभग १८,००० श्लोकों का विशाल ग्रंथ है, जिसे वेदों और पुराणों का सार भी कहा जाता है।
+    </p>
+    <p class="yatra-text">
+      इसकी भाषा अत्यंत गूढ़ एवं गहन होने के कारण सामान्य व्यक्ति के लिए इसका अध्ययन सरल नहीं होता। इसी उद्देश्य से <strong>‘श्री भागवत कथामृत’</strong> को सरल हिन्दी एवं सप्ताह पारायण शैली में प्रस्तुत किया गया है।
+    </p>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="importance" class="yatra-section reveal">
+    <h2 class="yatra-section-title">भागवत पढ़ने और सुनने का महत्व</h2>
+    <div class="yatra-divider"></div>
+    
+    <div class="yatra-highlight">
+      "भागवत श्रवण से मन निर्मल होता है।"
+    </div>
+
+    <div class="yatra-grid">
+      <div class="yatra-card">
+        <i data-lucide="sun"></i>
+        <h3>पापों का नाश</h3>
+        <p>श्रद्धा पूर्वक भागवत सुनने से पापों का क्षय होता है और भक्ति भाव जागृत होता है।</p>
+      </div>
+      <div class="yatra-card">
+        <i data-lucide="flower-2"></i>
+        <h3>मन की शांति</h3>
+        <p>भगवान श्रीकृष्ण की कथा जीवन में प्रेम, शांति और करुणा का संचार करती है।</p>
+      </div>
+      <div class="yatra-card">
+        <i data-lucide="heart"></i>
+        <h3>ईश्वर कृपा</h3>
+        <p>भागवत कथा मनुष्य को ईश्वर के निकट ले जाने का दिव्य माध्यम है।</p>
+      </div>
+      <div class="yatra-card">
+        <i data-lucide="users"></i>
+        <h3>परिवारिक सुख</h3>
+        <p>पारिवारिक वातावरण में सकारात्मकता और आपसी सद्भाव में वृद्धि होती है।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="bhakti" class="yatra-parallax">
+    <div class="yatra-section reveal" style="padding: 0;">
+      <h2 class="yatra-section-title">श्रीकृष्ण भक्ति और जीवन परिवर्तन</h2>
+      <div class="yatra-divider"></div>
+      
+      <p class="yatra-text" style="color: var(--text-cream); font-size: 1.4rem;">
+        भगवान श्रीकृष्ण की कथा केवल सुनने की नहीं, बल्कि जीवन में उतारने की प्रेरणा देती है।
+      </p>
+      
+      <div class="yatra-highlight" style="border: none; background: rgba(2, 15, 11, 0.8);">
+        "भक्ति योग, करुणा, प्रेम, विनम्रता और धर्म के मार्ग पर चलकर ही आध्यात्मिक जागरण एवं जीवन में वास्तविक परिवर्तन संभव है।"
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="parayan" class="yatra-section reveal">
+    <h2 class="yatra-section-title">सप्ताह पारायण का महत्व</h2>
+    <div class="yatra-divider"></div>
+    <p class="yatra-text">
+      राजा परीक्षित और शुकदेव जी के संवाद से आरम्भ हुई सात दिन की यह कथा परंपरा अत्यंत फलदायी है। श्रवण परंपरा का पालन करते हुए घर में इसका पाठ करने से संपूर्ण घर में धार्मिक एवं सकारात्मक ऊर्जा का प्रवाह होता है।
+    </p>
+    <div class="yatra-highlight">
+      "यह पुस्तक धार्मिक अवसरों, पुण्यतिथि एवं पितरों की स्मृति में भी श्रद्धापूर्वक वितरित की जा सकती है।"
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="benefits" class="yatra-section reveal">
+    <h2 class="yatra-section-title">भागवत बाँटने एवं वितरण के लाभ</h2>
+    <div class="yatra-divider"></div>
+    <p class="yatra-text">
+      श्रीमद्भागवत का वितरण केवल एक पुस्तक देना नहीं, बल्कि भक्ति, ज्ञान और सकारात्मकता का प्रसार करना है। श्रद्धा भाव से भागवत बाँटना अत्यंत पुण्यदायी माना गया है। यह कार्य स्वयं के साथ-साथ समाज में भी आध्यात्मिक जागरण का माध्यम बनता है।
+    </p>
+
+    <div class="yatra-grid" style="margin-top: 40px;">
+      <div class="yatra-card">
+        <i data-lucide="flame"></i>
+        <h3>पुण्य प्राप्ति</h3>
+        <p>श्रद्धापूर्वक भागवत बाँटना अत्यंत पुण्यदायी कार्य माना गया है।</p>
+      </div>
+      <div class="yatra-card">
+        <i data-lucide="book-open"></i>
+        <h3>ज्ञान प्रसार</h3>
+        <p>भागवत का वितरण ज्ञान और भक्ति का प्रसार माना जाता है।</p>
+      </div>
+      <div class="yatra-card">
+        <i data-lucide="gift"></i>
+        <h3>आध्यात्मिक सेवा</h3>
+        <p>धार्मिक अवसरों एवं पुण्यतिथि पर भागवत वितरण श्रेष्ठ आध्यात्मिक सेवा है।</p>
+      </div>
+      <div class="yatra-card">
+        <i data-lucide="sparkles"></i>
+        <h3>सकारात्मकता</h3>
+        <p>जहाँ भागवत पहुँचती है, वहाँ भक्ति और सकारात्मकता का वातावरण बनता है।</p>
+      </div>
+    </div>
+    
+    <div class="yatra-highlight">
+      "भागवत का प्रसार केवल पुस्तकों का वितरण नहीं, बल्कि भगवान श्रीकृष्ण के प्रेम और भक्ति का प्रसार है।"
+    </div>
+  </section>
+
+
+
+  <!-- Section 7 -->
+  <section id="quotes" class="yatra-parallax" style="background-image: none; background-color: var(--bg-deep-black);">
+    <div class="yatra-section reveal">
+      <h2 class="yatra-section-title">भागवत के दिव्य विचार</h2>
+      <div class="yatra-divider" style="margin-bottom: 80px;"></div>
+      
+      <div class="yatra-quote">
+        <span>"</span> जहाँ भागवत कथा होती है, वहाँ भक्ति, शांति और सकारात्मकता का वास होता है। <span>"</span>
+      </div>
+      
+      <div class="yatra-quote">
+        <span>"</span> भागवत मानव जीवन को ईश्वर प्रेम की ओर ले जाने वाला दिव्य प्रकाश है। <span>"</span>
+      </div>
+      
+      <div class="yatra-quote">
+        <span>"</span> भगवान श्रीकृष्ण की कथा जीवन में प्रेम, शांति और करुणा का संचार करती है। <span>"</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="yatra-cta-section reveal">
+    <h2 class="yatra-section-title" style="margin-bottom: 24px;">आज ही श्री भागवत कथामृत अपने घर मंगवाएं</h2>
+    <p class="yatra-text" style="max-width: 600px; margin: 0 auto 40px; color: var(--text-cream);">
+      सरल हिन्दी में प्रस्तुत यह ग्रंथ भगवान श्रीकृष्ण की भक्ति, ज्ञान और दिव्य लीलाओं को सहज रूप में आपके घर तक पहुँचाता है।
+    </p>
+    
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 60px;">
+      <a href="https://instagram.com/bhagwatkathamrit.in" target="_blank" class="btn-call-pill" style="font-size: 1.2rem; padding: 15px 35px; border: 1px solid rgba(212,175,55,0.4); background: rgba(212,175,55,0.1);">
+        <i data-lucide="instagram" style="margin-right: 12px; width: 28px; height: 28px; color: var(--accent-gold);"></i> @bhagwatkathamrit.in
+      </a>
+    </div>
+
+    <div style="color: var(--text-muted); line-height: 1.8; font-size: 1.1rem;">
+      <h4 style="color: var(--accent-gold); font-size: 1.3rem; margin-bottom: 10px; font-family: var(--font-heading);">संपर्क पता</h4>
+      6-A-1, जवाहर नगर<br>
+      श्रीगंगानगर – 335001<br>
+      राजस्थान
+    </div>
+  </section>
+
+  <!-- Global Floating CTAs -->
+  <div class="global-floating-ctas">
+    <!-- Order CTA -->
+    <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" class="float-cta-btn">
+      <div class="float-bubble order">जय श्री कृष्ण 🙏 अपनी पुस्तक प्राप्त करें</div>
+      <div class="float-icon-wrapper order">
+        <i data-lucide="shopping-bag" style="color: white; width: 24px; height: 24px;"></i>
+      </div>
+    </a>
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/919828039262?text=राधे राधे 🙏 मुझे श्री भागवत कथामृत पुस्तक के बारे में जानकारी चाहिए।" target="_blank" class="float-cta-btn">
+      <div class="float-bubble whatsapp">राधे राधे 🙏 पुस्तक की जानकारी चाहिए?</div>
+      <div class="float-icon-wrapper whatsapp">
+        <img src="logo.png" alt="WhatsApp" style="width: 28px; height: 28px;">
+      </div>
+    </a>
+  </div>
+
+  <!-- Link to external JS -->
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Scroll reveal logic
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal(); // Trigger on load
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.yatra-link').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+      });
+    });
+
+    // Active link highlighting
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".yatra-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= (sectionTop - 120)) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
