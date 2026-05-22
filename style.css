@@ -424,22 +424,26 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
    CONTACT SECTION
 ═══════════════════════════════════════════ */
 .contact-grid {
-  display: grid; gap: 24px; padding: 60px 0;
+  display: grid; gap: 20px; padding: 50px 0;
   grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;
 }
 .contact-card {
-  background: var(--bg-white); border: 1px solid var(--accent-gold-light);
-  border-radius: 12px; padding: 24px; display: flex; align-items: center; gap: 20px;
-  box-shadow: var(--shadow-soft); transition: var(--transition-smooth);
+  background: var(--bg-white); border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); transition: var(--transition-smooth);
 }
-.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-float); }
+.contact-card:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05); border-color: rgba(212, 175, 55, 0.3); }
 .contact-icon-box {
-  width: 50px; height: 50px; border-radius: 12px;
+  width: 40px; height: 40px; border-radius: 10px;
   background: var(--bg-cream); color: var(--accent-gold);
-  display: flex; align-items: center; justify-content: center; border: 1px solid var(--accent-gold-light);
+  display: flex; align-items: center; justify-content: center; border: 1px solid rgba(212, 175, 55, 0.2);
+  flex-shrink: 0;
 }
-.contact-details h3 { font-size: 1.1rem; margin-bottom: 4px; color: var(--primary-peacock); }
-.contact-details p { color: var(--text-dark-green); font-size: 1.05rem; }
+.contact-icon-box i { width: 20px; height: 20px; }
+.contact-details h3 { font-size: 1rem; font-weight: 500; margin-bottom: 2px; color: var(--primary-peacock); }
+.contact-details p { color: #a39161; font-size: 0.9rem; font-weight: 400; line-height: 1.5; }
+.contact-details p a { color: inherit; text-decoration: none; transition: var(--transition-smooth); }
+.contact-details p a:hover { color: var(--accent-gold); }
 
 /* ═══════════════════════════════════════════
    GLOBAL FLOATING CTA
