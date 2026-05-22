@@ -111,7 +111,7 @@ h1, h2, h3, h4, .logo {
 
 .btn-primary {
   background-color: var(--wa-green);
-  color: var(--text-cream);
+  color: #ffffff;
   border-color: rgba(244, 239, 223, 0.1);
 }
 
@@ -171,6 +171,10 @@ h1, h2, h3, h4, .logo {
   .logo { pointer-events: auto; }
   .logo img { height: 40px !important; }
   .logo span { display: none !important; }
+  
+  .hero, .yatra-hero, .contact-hero {
+    padding-top: 80px !important; /* Fix unnecessary gap on mobile */
+  }
 }
 
 .nav-content {
