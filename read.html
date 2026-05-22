@@ -150,27 +150,35 @@
     document.addEventListener('DOMContentLoaded', function() {
       const flipbookEl = document.getElementById('flipbook');
       if(flipbookEl) {
-        
-        const pageFlip = new St.PageFlip(flipbookEl, {
-          width: 400, // Base width
-          height: 600, // Base height
-          size: "fit",
-          minWidth: 300,
-          maxWidth: 600,
-          minHeight: 400,
-          maxHeight: 900,
-          showCover: true,
-          mobileScrollSupport: true,
-          usePortrait: true, // Forces single page view
-          maxShadowOpacity: 0.5,
-        });
+        let PFClass = null;
+        if (typeof St !== 'undefined' && St.PageFlip) PFClass = St.PageFlip;
+        else if (typeof pageFlip !== 'undefined' && pageFlip.PageFlip) PFClass = pageFlip.PageFlip;
+        else if (typeof PageFlip !== 'undefined') PFClass = PageFlip;
 
-        // Load pages
-        pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+        if (PFClass) {
+          const pf = new PFClass(flipbookEl, {
+            width: 400, // Base width
+            height: 600, // Base height
+            size: "stretch", // Ensures it fits container unconditionally
+            minWidth: 300,
+            maxWidth: 600,
+            minHeight: 400,
+            maxHeight: 900,
+            showCover: true,
+            mobileScrollSupport: true,
+            usePortrait: true, // Forces single page view
+            maxShadowOpacity: 0.5,
+          });
 
-        // Controls
-        document.getElementById('btn-prev').addEventListener('click', () => pageFlip.flipPrev());
-        document.getElementById('btn-next').addEventListener('click', () => pageFlip.flipNext());
+          // Load pages
+          pf.loadFromHTML(document.querySelectorAll('.page'));
+
+          // Controls
+          document.getElementById('btn-prev').addEventListener('click', () => pf.flipPrev());
+          document.getElementById('btn-next').addEventListener('click', () => pf.flipNext());
+        } else {
+          console.error("PageFlip failed to load!");
+        }
       }
     });
   </script>
