@@ -78,6 +78,20 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
   display: flex; align-items: center; justify-content: center;
 }
 
+.desktop-nav { display: none; }
+.d-nav-item {
+  color: var(--primary-peacock);
+  font-weight: 500; font-size: 1.1rem;
+  margin-left: 24px; text-decoration: none;
+  transition: var(--transition-smooth);
+}
+.d-nav-item:hover { color: var(--accent-gold); }
+
+@media (min-width: 769px) {
+  .menu-btn { display: none; }
+  .desktop-nav { display: flex; align-items: center; }
+}
+
 /* ═══════════════════════════════════════════
    DRAWER MENU
 ═══════════════════════════════════════════ */
