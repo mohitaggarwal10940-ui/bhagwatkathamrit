@@ -245,20 +245,73 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
 @media (max-width: 768px) { .cta-group { justify-content: center; } }
 
 /* ═══════════════════════════════════════════
-   FEATURES (FLOATING LINES)
+   PREMIUM TICKER (INFO STRIP)
 ═══════════════════════════════════════════ */
-.features-section { padding: 80px 0; background: var(--bg-white); }
-.section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--primary-peacock); }
-.features-container { max-width: 600px; margin: 0 auto; }
-.feature-line {
-  display: flex; align-items: center; gap: 20px;
-  padding: 24px 0; border-bottom: 1px solid var(--accent-gold-light);
-  opacity: 0; transform: translateY(20px); transition: var(--transition-smooth);
+.premium-ticker-wrapper {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 100%;
+  background: rgba(17, 58, 48, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50px;
+  padding: 12px 0;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+  animation: floatTicker 4s ease-in-out infinite;
+  display: flex;
+  position: relative;
 }
-.feature-line.visible { opacity: 1; transform: translateY(0); }
-.feature-line:last-child { border-bottom: none; }
-.feature-dot { width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px rgba(195, 154, 37, 0.5); flex-shrink: 0; }
-.feature-text { font-size: 1.15rem; color: var(--primary-peacock); font-weight: 500; }
+
+.premium-ticker-wrapper::before,
+.premium-ticker-wrapper::after {
+  content: ''; position: absolute; top: 0; width: 40px; height: 100%; z-index: 2;
+}
+.premium-ticker-wrapper::before {
+  left: 0; background: linear-gradient(to right, rgba(17,58,48,0.8), transparent); border-radius: 50px 0 0 50px;
+}
+.premium-ticker-wrapper::after {
+  right: 0; background: linear-gradient(to left, rgba(17,58,48,0.8), transparent); border-radius: 0 50px 50px 0;
+}
+
+.premium-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: scrollTicker 30s linear infinite;
+}
+
+.premium-ticker-content {
+  display: flex;
+  align-items: center;
+  padding-right: 0;
+}
+
+.premium-ticker-content span {
+  color: var(--accent-gold);
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ticker-dot {
+  width: 4px; height: 4px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  margin: 0 24px;
+  opacity: 0.5;
+  display: inline-block;
+}
+
+@keyframes scrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes floatTicker {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
 
 /* ═══════════════════════════════════════════
    ACCORDION (KNOW BHAGWAT)
