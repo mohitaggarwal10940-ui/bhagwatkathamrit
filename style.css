@@ -88,7 +88,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
 .d-nav-item:hover { color: var(--accent-gold); }
 
 @media (min-width: 769px) {
-  .menu-btn { display: none; }
   .desktop-nav { display: flex; align-items: center; }
 }
 
