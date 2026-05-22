@@ -415,7 +415,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
 }
 .book-3d-wrapper {
   position: relative;
-  width: 160px; height: 260px;
+  width: 240px; height: 340px;
   transform-style: preserve-3d;
   animation: rotateBook 15s linear infinite;
 }
@@ -427,10 +427,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
 .book-face img { width: 100%; height: 100%; object-fit: fill; }
 .book-front { transform: translateZ(15px); }
 .book-back { transform: rotateY(180deg) translateZ(15px); }
-.book-left { width: 30px; transform: rotateY(-90deg) translateZ(80px); left: 50%; margin-left: -15px; }
-.book-right { width: 30px; transform: rotateY(90deg) translateZ(80px); left: 50%; margin-left: -15px; }
-.book-top { height: 30px; transform: rotateX(90deg) translateZ(130px); top: 50%; margin-top: -15px; background: #eee; }
-.book-bottom { height: 30px; transform: rotateX(-90deg) translateZ(130px); top: 50%; margin-top: -15px; background: #eee; }
+.book-left { width: 30px; transform: rotateY(-90deg) translateZ(120px); left: 50%; margin-left: -15px; }
+.book-right { width: 30px; transform: rotateY(90deg) translateZ(120px); left: 50%; margin-left: -15px; }
+.book-top { height: 30px; transform: rotateX(90deg) translateZ(170px); top: 50%; margin-top: -15px; background: #eee; }
+.book-bottom { height: 30px; transform: rotateX(-90deg) translateZ(170px); top: 50%; margin-top: -15px; background: #eee; }
 
 @keyframes rotateBook {
   0% { transform: rotateY(0deg) translateY(0px); }
