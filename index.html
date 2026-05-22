@@ -19,10 +19,15 @@
 </head>
 <body>
 
-  <!-- Floating Global Order Button -->
-  <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" style="position: fixed; bottom: 84px; right: 16px; background: var(--accent-gold); color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-float); z-index: 999; transition: var(--transition-smooth);">
-    <i data-lucide="shopping-bag" style="width: 28px; height: 28px;"></i>
-  </a>
+  <!-- Global Floating CTAs -->
+  <div class="global-floating-ctas">
+    <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" class="float-cta-btn">
+      <div class="float-bubble order">जय श्री कृष्ण 🙏 अपनी पुस्तक प्राप्त करें</div>
+      <div class="float-icon-wrapper order">
+        <i data-lucide="shopping-bag" style="color: white; width: 24px; height: 24px;"></i>
+      </div>
+    </a>
+  </div>
 
   <!-- Mobile Bottom Nav -->
   <nav class="bottom-nav">
@@ -106,8 +111,15 @@
           </div>
         </div>
 
-        <div class="book-hero-wrapper">
-          <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत" class="book-hero-img">
+        <div class="hero-visual fade-up" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+          <div class="book-3d-wrapper" style="transform: scale(0.9);">
+            <div class="book-face book-front"><img src="front .jpeg" alt="Front Cover"></div>
+            <div class="book-face book-back"><img src="back1.png" alt="Back Cover"></div>
+            <div class="book-face book-left"><img src="left.png" alt="Spine"></div>
+            <div class="book-face book-right"><img src="right.png" alt="Pages Edge"></div>
+            <div class="book-face book-top"></div>
+            <div class="book-face book-bottom"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -158,22 +170,22 @@
     <div class="container text-center fade-up">
       <h2 class="section-title" style="margin-bottom: 24px;">लेखक परिचय</h2>
       <div style="width: 80px; height: 2px; background: var(--accent-gold); margin: 0 auto 32px auto;"></div>
+      <img src="extracted_4.jpg" alt="डॉ. चम्पालाल गुप्त" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-gold); box-shadow: var(--shadow-soft); margin-bottom: 24px;">
       <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--primary-peacock);">
         डॉ. चम्पालाल गुप्त द्वारा रचित यह ग्रंथ उनके जीवन भर के आध्यात्मिक ज्ञान एवं अनुभव का निचोड़ है। उन्होंने अपना संपूर्ण जीवन धर्म एवं साहित्य को समर्पित किया है, ताकि भावी पीढ़ी भी सनातन ज्ञान को सरलता से समझ सके।
       </p>
     </div>
   </section>
 
-  <!-- Instagram Section -->
-  <section class="insta-section fade-up">
-    <div class="container">
-      <a href="https://instagram.com/bhagwatkathamrit.in" target="_blank" class="insta-link">
-        <div class="insta-icon-wrapper">
-          <i data-lucide="instagram" style="width: 32px; height: 32px;"></i>
-        </div>
-        <span>हमसे जुड़ें</span>
-      </a>
-    </div>
+  <!-- Final Section: Instagram and Big Logo -->
+  <section class="container fade-up" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px; padding: 60px 0 40px 0;">
+    <a href="https://instagram.com/bhagwatkathamrit.in" target="_blank" class="insta-link" style="margin: 0; min-height: auto; width: 300px;">
+      <div class="insta-icon-wrapper" style="margin-bottom: 12px;">
+        <i data-lucide="instagram" style="width: 32px; height: 32px;"></i>
+      </div>
+      <span style="text-align: center;">हमारे साथ जुड़ें<br><small style="font-size: 0.9rem; color: var(--text-muted-green);">@bhagwatkathamrit.in</small></span>
+    </a>
+    <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत" style="height: 150px; width: auto; max-width: 100%; border-radius: 12px; filter: drop-shadow(0 10px 20px rgba(195, 154, 37, 0.2));">
   </section>
 
   <!-- Footer -->

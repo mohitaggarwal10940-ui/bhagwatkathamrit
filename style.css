@@ -378,3 +378,31 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
 }
 .contact-details h3 { font-size: 1.1rem; margin-bottom: 4px; color: var(--primary-peacock); }
 .contact-details p { color: var(--text-dark-green); font-size: 1.05rem; }
+
+/* ═══════════════════════════════════════════
+   GLOBAL FLOATING CTA
+═══════════════════════════════════════════ */
+.global-floating-ctas {
+  position: fixed; bottom: 84px; right: 16px; z-index: 999;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.float-cta-btn {
+  position: relative; display: flex; align-items: center; gap: 12px;
+}
+.float-icon-wrapper {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-float); transition: var(--transition-smooth);
+}
+.float-icon-wrapper.order { background: var(--accent-gold); }
+.float-bubble {
+  background: var(--bg-white); color: var(--primary-peacock);
+  padding: 8px 16px; border-radius: 20px; font-weight: 500; font-size: 0.9rem;
+  box-shadow: var(--shadow-soft); white-space: nowrap; border: 1px solid var(--accent-gold-light);
+  transform: translateX(10px); transition: var(--transition-smooth);
+}
+.float-cta-btn:hover .float-icon-wrapper { transform: scale(1.05); }
+
+@media (max-width: 768px) {
+  .float-bubble { right: 70px; position: absolute; }
+}
