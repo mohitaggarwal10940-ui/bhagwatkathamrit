@@ -397,7 +397,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
   overflow: hidden; padding: 80px 20px 80px 20px; /* Space for navbar and bottom nav */
 }
 .flipbook-container {
-  width: 100%; max-width: 500px; height: calc(100vh - 180px);
+  width: 100%; height: 100%;
+  max-width: calc((100vh - 180px) * 400 / 566);
+  max-height: calc(100vh - 180px);
+  aspect-ratio: 400 / 566;
+  margin: 0 auto;
   position: relative; perspective: 2000px;
 }
 /* We will use turn.js or similar for the actual flip logic */
