@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <link rel="preload" as="image" href="front.jpeg">
+  <link rel="preload" as="image" href="book_page_0.jpg">
+  <link rel="preload" as="image" href="book_page_1.jpg">
+  
   <!-- PageFlip JS for Realistic 3D Flipping -->
   <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
 </head>
@@ -157,17 +161,18 @@
 
         if (PFClass) {
           const pf = new PFClass(flipbookEl, {
-            width: 400, // Base width
-            height: 600, // Base height
-            size: "stretch", // Ensures it fits container unconditionally
+            width: 400,
+            height: 566,
+            size: "fit",
             minWidth: 300,
             maxWidth: 600,
             minHeight: 400,
             maxHeight: 900,
             showCover: true,
             mobileScrollSupport: true,
-            usePortrait: true, // Forces single page view
+            usePortrait: true,
             maxShadowOpacity: 0.5,
+            flippingTime: 700,
           });
 
           // Load pages
