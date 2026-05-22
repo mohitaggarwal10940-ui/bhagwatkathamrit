@@ -70,7 +70,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-peacock)
   box-shadow: 0 4px 20px rgba(195, 154, 37, 0.05);
 }
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
-.logo img { height: 45px; width: auto; transition: var(--transition-smooth); transform: scale(1.35); transform-origin: left center; }
+.logo img { height: 45px; width: auto; transition: var(--transition-smooth); transform: scale(1.6); transform-origin: left center; }
 .menu-btn {
   background: none; border: none;
   color: var(--primary-peacock);
