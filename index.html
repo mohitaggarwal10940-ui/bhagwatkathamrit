@@ -19,236 +19,198 @@
 </head>
 <body>
 
-  <!-- Global Floating CTAs -->
-  <div class="global-floating-ctas">
-    <!-- Order CTA -->
-    <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" class="float-cta-btn">
-      <div class="float-bubble order">जय श्री कृष्ण 🙏 अपनी पुस्तक प्राप्त करें</div>
-      <div class="float-icon-wrapper order">
-        <i data-lucide="shopping-bag" style="color: white; width: 24px; height: 24px;"></i>
-      </div>
-    </a>
-  </div>
+  <!-- Floating Global Order Button -->
+  <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" style="position: fixed; bottom: 84px; right: 16px; background: var(--accent-gold); color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-float); z-index: 999; transition: var(--transition-smooth);">
+    <i data-lucide="shopping-bag" style="width: 28px; height: 28px;"></i>
+  </a>
 
   <!-- Mobile Bottom Nav -->
   <nav class="bottom-nav">
-    <a href="#hero" class="b-nav-item active">
+    <a href="index.html" class="b-nav-item active">
       <i data-lucide="home"></i>
       <span>मुख्य पृष्ठ</span>
     </a>
     <a href="read.html" class="b-nav-item">
       <i data-lucide="book-open"></i>
-      <span>पढ़ें</span>
+      <span>पुस्तक</span>
     </a>
-    <a href="yatra.html" class="b-nav-item">
-      <i data-lucide="map"></i>
-      <span>यात्रा</span>
-    </a>
-    <a href="#features" class="b-nav-item">
-      <i data-lucide="info"></i>
-      <span>विशेषताएं</span>
-    </a>
-    <a href="#author" class="b-nav-item">
-      <i data-lucide="user"></i>
-      <span>लेखक</span>
+    <a href="know-bhagwat.html" class="b-nav-item">
+      <i data-lucide="compass"></i>
+      <span>भागवत</span>
     </a>
     <a href="contact.html" class="b-nav-item">
       <i data-lucide="phone"></i>
       <span>संपर्क</span>
     </a>
+    <button class="b-nav-item toggle-drawer" style="background: none; border: none;">
+      <i data-lucide="menu"></i>
+      <span>मेन्यू</span>
+    </button>
   </nav>
 
   <!-- Navbar -->
   <header class="navbar">
     <div class="container nav-content">
       <div class="logo">
-        <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत" style="height: 80px; width: auto;">
+        <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत">
       </div>
-      <div class="nav-links">
-        <a href="read.html">पुस्तक पढ़ें</a>
-        <a href="yatra.html">भागवत यात्रा</a>
-        <a href="#features">विशेषताएं</a>
-        <a href="#author">लेखक</a>
-        <a href="contact.html">संपर्क करें</a>
-      </div>
+      <button class="menu-btn toggle-drawer">
+        <i data-lucide="menu" style="width: 28px; height: 28px;"></i>
+      </button>
     </div>
   </header>
 
+  <!-- Drawer Menu -->
+  <div class="drawer-overlay close-drawer"></div>
+  <aside class="drawer-menu">
+    <div class="drawer-header">
+      <button class="drawer-close close-drawer"><i data-lucide="x" style="width: 28px; height: 28px;"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link"><i data-lucide="home"></i> मुख्य पृष्ठ</a>
+      <a href="read.html" class="drawer-link"><i data-lucide="book-open"></i> पुस्तक पढ़ें</a>
+      <a href="know-bhagwat.html" class="drawer-link"><i data-lucide="compass"></i> भागवत को जानें</a>
+      <a href="index.html#features" class="drawer-link"><i data-lucide="info"></i> विशेषताएँ</a>
+      <a href="index.html#author" class="drawer-link"><i data-lucide="user"></i> लेखक</a>
+      <a href="contact.html" class="drawer-link"><i data-lucide="phone"></i> संपर्क</a>
+    </nav>
+    <div class="drawer-help-card">
+      <h4>सहायता चाहिए?</h4>
+      <p>पुस्तक संबंधी जानकारी हेतु संपर्क करें</p>
+      <a href="tel:+919828039262" class="btn-call"><i data-lucide="phone-call"></i> +91 98280 39262</a>
+    </div>
+  </aside>
+
   <!-- Hero Section -->
   <section id="hero" class="hero">
-    <div class="container hero-container">
-      <div class="hero-content cinematic-reveal">
-        <h1 class="hero-title">श्री भागवत कथामृत</h1>
-        <h2 class="hero-subtitle">सरल हिन्दी में सम्पूर्ण श्रीमद्भागवत कथा</h2>
-        
-        <div class="hero-visual cinematic-reveal delay-2" style="margin: 40px 0;">
-          <div class="book-3d-wrapper">
-            <div class="book-face book-front">
-              <img src="front .jpeg" alt="Front Cover">
-            </div>
-            <div class="book-face book-back">
-              <img src="back1.png" alt="Back Cover">
-            </div>
-            <div class="book-face book-left">
-              <img src="left.png" alt="Spine">
-            </div>
-            <div class="book-face book-right">
-              <img src="right.png" alt="Pages Edge">
-            </div>
-            <div class="book-face book-top"></div>
-            <div class="book-face book-bottom"></div>
+    <div class="hero-bg-gradient"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content fade-up">
+          <h1 class="hero-title">श्री भागवत कथामृत</h1>
+          <h2 class="hero-subtitle">सरल हिन्दी में सम्पूर्ण श्रीमद्भागवत कथा</h2>
+          
+          <div class="hero-divider"></div>
+          
+          <p class="hero-desc">
+            श्रीमद्भागवत महापुराण अत्यंत विशाल एवं गूढ़ ग्रंथ है। सामान्य व्यक्ति के लिए इसे कम समय में समझना कठिन होता है। इसी उद्देश्य से यह ग्रंथ अत्यंत सरल भाषा एवं सप्ताह पारायण विधि में प्रस्तुत किया गया है।
+          </p>
+
+          <div class="cta-group">
+            <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" class="btn btn-gold">
+              अभी पुस्तक प्राप्त करें
+            </a>
+            <a href="read.html" class="btn btn-cream">
+              पुस्तक पढ़ें
+            </a>
           </div>
         </div>
 
-        <p class="hero-desc">
-          श्रीमद्भागवत महापुराण मूल रूप में अत्यंत विशाल एवं गूढ़ ग्रंथ है, जिसमें लगभग १८,००० श्लोक हैं। सामान्य व्यक्ति के लिए इसे कम समय में समझना और पढ़ना कठिन हो जाता है। इसी उद्देश्य से यह ग्रंथ सरल भाषा एवं सप्ताह पारायण विधि में प्रस्तुत किया गया है।
-        </p>
-        <p class="hero-desc highlight">
-          इस पुस्तक को श्रद्धापूर्वक पितरों की स्मृति में भी वितरित किया जा सकता है।
-        </p>
-
-        <ul class="trust-points">
-          <li><i data-lucide="check"></i> हार्डबाउंड संस्करण</li>
-          <li><i data-lucide="check"></i> रंगीन चित्र</li>
-          <li><i data-lucide="check"></i> सरल भाषा</li>
-          <li><i data-lucide="check"></i> सप्ताह पारायण हेतु उपयुक्त</li>
-        </ul>
-
-        <div class="cta-group">
-          <a href="yatra.html" class="btn btn-secondary">
-            <i data-lucide="compass" style="width: 28px; height: 28px; margin-right: 8px;"></i> भागवत यात्रा करें
-          </a>
-          <a href="read.html" class="btn btn-secondary">
-            <i data-lucide="book-open"></i> पुस्तक पढ़ें
-          </a>
+        <div class="book-hero-wrapper">
+          <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत" class="book-hero-img">
         </div>
-        <div class="delivery-text" style="font-size: 1.4rem; font-weight: 600; color: var(--text-cream); margin-top: 20px;">भारतभर में उपलब्ध</div>
       </div>
     </div>
   </section>
 
-  <!-- Book Preview Section removed, moved to read.html -->
-
-  <!-- Cinematic Features Section -->
-  <section id="features" class="features-section cinematic-features">
-    <div class="features-ambient-bg"></div>
-    <div class="features-particles"></div>
-    
+  <!-- Features Section -->
+  <section id="features" class="features-section">
     <div class="container">
-      <div class="section-header cinematic-reveal">
-        <h2 class="section-title">पुस्तक की विशेषताएं</h2>
-        <div class="section-divider"></div>
-      </div>
+      <h2 class="section-title fade-up">पुस्तक की विशेषताएँ</h2>
+      <div class="features-container">
+        
+        <div class="feature-line fade-up">
+          <div class="feature-dot"></div>
+          <div class="feature-text">हार्डबाउंड संस्करण</div>
+        </div>
+        
+        <div class="feature-line fade-up">
+          <div class="feature-dot"></div>
+          <div class="feature-text">सचित्र संस्करण</div>
+        </div>
+        
+        <div class="feature-line fade-up">
+          <div class="feature-dot"></div>
+          <div class="feature-text">सरल हिन्दी भाषा</div>
+        </div>
+        
+        <div class="feature-line fade-up">
+          <div class="feature-dot"></div>
+          <div class="feature-text">सप्ताह पारायण हेतु उपयुक्त</div>
+        </div>
+        
+        <div class="feature-line fade-up">
+          <div class="feature-dot"></div>
+          <div class="feature-text">परिवार सहित पाठ योग्य</div>
+        </div>
+        
+        <div class="feature-line fade-up">
+          <div class="feature-dot"></div>
+          <div class="feature-text">धार्मिक अवसरों पर वितरण योग्य</div>
+        </div>
 
-      <div class="bento-grid">
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.1s;">
-          <i data-lucide="file-text" class="bento-icon"></i>
-          <h3 class="bento-title">175 पृष्ठ</h3>
-        </div>
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.2s;">
-          <i data-lucide="languages" class="bento-icon"></i>
-          <h3 class="bento-title">सरल हिन्दी भाषा</h3>
-        </div>
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.3s;">
-          <i data-lucide="image" class="bento-icon"></i>
-          <h3 class="bento-title">सचित्र संस्करण</h3>
-        </div>
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.4s;">
-          <i data-lucide="users" class="bento-icon"></i>
-          <h3 class="bento-title">10K+ वितरित</h3>
-        </div>
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.5s;">
-          <i data-lucide="calendar-days" class="bento-icon"></i>
-          <h3 class="bento-title">सप्ताह पारायण हेतु उपयुक्त</h3>
-        </div>
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.6s;">
-          <i data-lucide="book" class="bento-icon"></i>
-          <h3 class="bento-title">टिकाऊ हार्डबाउंड संस्करण</h3>
-        </div>
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.7s;">
-          <i data-lucide="home" class="bento-icon"></i>
-          <h3 class="bento-title">परिवार सहित पाठ योग्य</h3>
-        </div>
-        <div class="bento-card cinematic-reveal" style="animation-delay: 0.8s;">
-          <i data-lucide="palette" class="bento-icon"></i>
-          <h3 class="bento-title">रंगीन चित्र एवं उत्तम आर्ट पेपर</h3>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Author Section -->
-  <section id="author" class="author-section">
-    <div class="container author-container">
-      <div class="author-image-wrapper cinematic-reveal">
-        <img src="extracted_4.jpg" alt="डॉ. चम्पालाल गुप्त" class="author-image">
-      </div>
-      <div class="author-info cinematic-reveal delay-1">
-        <h2 class="author-name">डॉ. चम्पालाल गुप्त</h2>
-        <p class="author-role">लेखक एवं संकलनकर्ता</p>
-        <p class="author-bio">
-          विद्वान और आध्यात्मिक चिंतक, जिन्होंने अपना जीवन धर्म और साहित्य की सेवा में समर्पित किया। 
-          उनका यह प्रयास है कि श्रीमद्भागवत जैसा महान ग्रंथ हर घर तक पहुंचे और आम जनमानस इसे सरलता से ग्रहण कर सके।
-        </p>
-      </div>
+  <section id="author" style="padding: 80px 0; background: var(--bg-cream);">
+    <div class="container text-center fade-up">
+      <h2 class="section-title" style="margin-bottom: 24px;">लेखक परिचय</h2>
+      <div style="width: 80px; height: 2px; background: var(--accent-gold); margin: 0 auto 32px auto;"></div>
+      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--primary-peacock);">
+        डॉ. चम्पालाल गुप्त द्वारा रचित यह ग्रंथ उनके जीवन भर के आध्यात्मिक ज्ञान एवं अनुभव का निचोड़ है। उन्होंने अपना संपूर्ण जीवन धर्म एवं साहित्य को समर्पित किया है, ताकि भावी पीढ़ी भी सनातन ज्ञान को सरलता से समझ सके।
+      </p>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials-section">
+  <!-- Instagram Section -->
+  <section class="insta-section fade-up">
     <div class="container">
-      <div class="section-header cinematic-reveal">
-        <h2 class="section-title">पाठकों के विचार</h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="marquee-wrapper cinematic-reveal">
-        <div class="marquee-content">
-          <div class="testimonial-card">
-            <p class="quote">"भाषा इतनी सरल है कि पढ़ते समय साक्षात भगवान की लीलाओं का अनुभव होता है। परिवार के साथ पढ़ने के लिए सर्वश्रेष्ठ।"</p>
-            <div class="author-name">- रमेश शर्मा</div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">"सप्ताह पारायण के लिए बिल्कुल सटीक। हार्डकवर और पन्नों की गुणवत्ता अत्यंत उत्कृष्ट है।"</p>
-            <div class="author-name">- सुशीला देवी</div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">"पितरों की शांति के लिए हमने यह पुस्तक वितरित की। सभी ने इसकी बहुत सराहना की।"</p>
-            <div class="author-name">- विकास अग्रवाल</div>
-          </div>
+      <a href="https://instagram.com/bhagwatkathamrit.in" target="_blank" class="insta-link">
+        <div class="insta-icon-wrapper">
+          <i data-lucide="instagram" style="width: 32px; height: 32px;"></i>
         </div>
-        
-        <!-- Duplicated groups to ensure seamless infinite scrolling on all screen sizes -->
-        <div class="marquee-content" aria-hidden="true">
-          <div class="testimonial-card"><p class="quote">"भाषा इतनी सरल है कि पढ़ते समय साक्षात भगवान की लीलाओं का अनुभव होता है। परिवार के साथ पढ़ने के लिए सर्वश्रेष्ठ।"</p><div class="author-name">- रमेश शर्मा</div></div>
-          <div class="testimonial-card"><p class="quote">"सप्ताह पारायण के लिए बिल्कुल सटीक। हार्डकवर और पन्नों की गुणवत्ता अत्यंत उत्कृष्ट है।"</p><div class="author-name">- सुशीला देवी</div></div>
-          <div class="testimonial-card"><p class="quote">"पितरों की शांति के लिए हमने यह पुस्तक वितरित की। सभी ने इसकी बहुत सराहना की।"</p><div class="author-name">- विकास अग्रवाल</div></div>
-        </div>
-        
-        <div class="marquee-content" aria-hidden="true">
-          <div class="testimonial-card"><p class="quote">"भाषा इतनी सरल है कि पढ़ते समय साक्षात भगवान की लीलाओं का अनुभव होता है। परिवार के साथ पढ़ने के लिए सर्वश्रेष्ठ।"</p><div class="author-name">- रमेश शर्मा</div></div>
-          <div class="testimonial-card"><p class="quote">"सप्ताह पारायण के लिए बिल्कुल सटीक। हार्डकवर और पन्नों की गुणवत्ता अत्यंत उत्कृष्ट है।"</p><div class="author-name">- सुशीला देवी</div></div>
-          <div class="testimonial-card"><p class="quote">"पितरों की शांति के लिए हमने यह पुस्तक वितरित की। सभी ने इसकी बहुत सराहना की।"</p><div class="author-name">- विकास अग्रवाल</div></div>
-        </div>
-      </div>
+        <span>हमसे जुड़ें</span>
+      </a>
     </div>
-  </section>
-
-  <!-- Final Section: Instagram and Big Logo -->
-  <section class="container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px; padding: 60px 0 20px 0;">
-    <div class="instagram-container cinematic-reveal" style="margin: 0; min-height: auto; width: 300px;">
-      <img src="insta logo.jpeg" alt="Instagram" class="instagram-icon" style="border-radius: 8px;">
-      <div class="instagram-text">हमारे साथ जुड़ें</div>
-      <a href="https://instagram.com/bhagwatkathamrit.in" target="_blank" class="instagram-username">@bhagwatkathamrit.in</a>
-    </div>
-    <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत" style="height: 150px; width: auto; max-width: 100%; border-radius: 12px; filter: drop-shadow(0 10px 20px rgba(195, 154, 37, 0.2));">
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo">श्री भागवत कथामृत</div>
-      <p class="copyright">© 2026 सर्वाधिकार सुरक्षित।</p>
+      <div class="footer-grid">
+        
+        <div class="footer-col fade-up">
+          <div class="footer-logo">श्री भागवत कथामृत</div>
+          <p class="footer-desc">
+            सरल हिन्दी में सम्पूर्ण श्रीमद्भागवत कथा। प्रत्येक घर में अध्यात्म और भक्ति का प्रकाश फैलाने का एक विनम्र प्रयास।
+          </p>
+        </div>
+
+        <div class="footer-col fade-up">
+          <h3 class="footer-heading">त्वरित लिंक</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">मुख्य पृष्ठ</a></li>
+            <li><a href="know-bhagwat.html">भागवत को जानें</a></li>
+            <li><a href="read.html">पुस्तक पढ़ें</a></li>
+            <li><a href="contact.html">संपर्क करें</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col fade-up">
+          <h3 class="footer-heading">संपर्क विवरण</h3>
+          <div class="footer-contact">
+            <p><i data-lucide="phone"></i> <a href="tel:+919828039262">+91 98280 39262</a></p>
+            <p><i data-lucide="mail"></i> <a href="mailto:bhagwatkathamrit.in@gmail.com">bhagwatkathamrit.in@gmail.com</a></p>
+            <p><i data-lucide="map-pin"></i> <span>6-A-1, जवाहर नगर,<br>श्रीगंगानगर, राजस्थान – 335001</span></p>
+          </div>
+        </div>
+
+      </div>
+      <div style="border-top: 1px solid rgba(255,253,248,0.1); margin-top: 40px; padding-top: 20px; text-align: center; color: rgba(255,253,248,0.6); font-size: 0.9rem;">
+        © 2026 श्री भागवत कथामृत। सर्वाधिकार सुरक्षित।
+      </div>
     </div>
   </footer>
 

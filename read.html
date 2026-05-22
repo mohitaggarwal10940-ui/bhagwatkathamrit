@@ -10,241 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
-
-  <!-- Swiper JS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: hidden;
-    }
-    
-    .mobile-header {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 15px 0 15px;
-      z-index: 100;
-      position: relative;
-    }
-    
-    .header-top-row {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 5px;
-    }
-
-    .back-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      border-radius: 8px;
-      color: var(--accent-gold);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(5px);
-    }
-
-    /* SWIPER PDF VIEWER STYLES */
-    .swiper-container-wrapper {
-      width: 100%;
-      max-width: 600px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      margin: 120px auto 40px auto;
-      z-index: 5;
-    }
-
-    .swiper {
-      width: 95%;
-      height: 70vh; /* Takes up most of the screen height */
-      background-color: transparent;
-    }
-
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: transparent;
-    }
-
-    .swiper-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* EXACT FIT WITHOUT CROPPING */
-      pointer-events: none;
-    }
-
-    /* Loading text */
-    #loading-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--accent-gold);
-      font-size: 1.2rem;
-      z-index: 10;
-    }
-
-    /* Custom Slider Controls */
-    .slider-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px; /* Space arrows nicely since pill is removed */
-      margin-top: 20px;
-      width: 100%;
-    }
-
-    .nav-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(212, 175, 55, 0.15);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: var(--accent-gold);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      backdrop-filter: blur(5px);
-      transition: all 0.3s ease;
-      z-index: 10;
-    }
-
-    .nav-btn:hover {
-      background: rgba(212, 175, 55, 0.3);
-      transform: scale(1.05);
-    }
-
-    /* CTA Page Inside Slider (Fixed alignment to not cut text) */
-    .final-cta-page {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 10px;
-      background: var(--bg-surface);
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      border-radius: 8px;
-    }
-
-    .final-cta-page h2.top {
-      color: #d4af37;
-      font-size: 1.3rem;
-      margin-bottom: 5px;
-      font-family: 'Noto Serif Devanagari', serif;
-    }
-
-    .final-cta-page h2.bot {
-      color: #d4af37;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      font-family: 'Noto Serif Devanagari', serif;
-    }
-
-    .final-cta-page p.desc {
-      color: #e8f0eb;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .final-cta-page img.book {
-      width: 100px;
-      height: auto;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-      margin-bottom: 12px;
-      border-radius: 4px;
-      pointer-events: none;
-    }
-
-    .btn-wa-book {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #25D366;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    }
-
-    .final-cta-page p.thanks {
-      color: #d4af37;
-      font-size: 0.85rem;
-      font-family: 'Noto Serif Devanagari', serif;
-      margin-top: 10px;
-    }
-
-    /* Footer */
-    .footer {
-      width: 100%;
-      padding: 40px 0 100px 0;
-      text-align: center;
-      background-color: rgba(3, 10, 8, 0.95);
-      border-top: 1px solid rgba(198, 168, 124, 0.1);
-      margin-top: auto;
-    }
-    .footer-logo {
-      font-size: 1.2rem;
-      color: var(--accent-gold);
-      margin-bottom: 16px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    .copyright {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-    @media (min-width: 768px) {
-      .footer { padding-bottom: 40px; }
-      .swiper { height: 80vh; }
-    }
-  </style>
+  
+  <!-- PageFlip JS for Realistic 3D Flipping -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
 </head>
-<body>
-
-  <!-- Global Navbar -->
-  <header class="navbar scrolled">
-    <div class="container nav-content">
-      <div class="logo">
-        <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
-          <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत" style="height: 50px; width: auto;">
-          <span style="color: var(--accent-gold); font-size: 1.3rem; font-weight: 600; margin-left: 10px; font-family: 'Noto Serif Devanagari', serif;">पुस्तक पढ़ें</span>
-        </a>
-      </div>
-      <div class="nav-links">
-        <a href="index.html">मुख्य पृष्ठ</a>
-        <a href="yatra.html">भागवत यात्रा</a>
-        <a href="contact.html">संपर्क करें</a>
-      </div>
-    </div>
-  </header>
+<body style="background: var(--bg-cream); overflow: hidden;">
 
   <!-- Mobile Bottom Nav -->
   <nav class="bottom-nav">
@@ -254,137 +25,149 @@
     </a>
     <a href="read.html" class="b-nav-item active">
       <i data-lucide="book-open"></i>
-      <span>पढ़ें</span>
+      <span>पुस्तक</span>
+    </a>
+    <a href="know-bhagwat.html" class="b-nav-item">
+      <i data-lucide="compass"></i>
+      <span>भागवत</span>
     </a>
     <a href="contact.html" class="b-nav-item">
       <i data-lucide="phone"></i>
       <span>संपर्क</span>
     </a>
+    <button class="b-nav-item toggle-drawer" style="background: none; border: none;">
+      <i data-lucide="menu"></i>
+      <span>मेन्यू</span>
+    </button>
   </nav>
 
-  <!-- Slider Section -->
-  <div class="swiper-container-wrapper">
-    <div id="loading-text">लोड हो रहा है...</div>
-    
-    <div class="swiper mySwiper" style="display:none;" id="main-swiper">
-      <div class="swiper-wrapper" id="swiper-wrapper">
-        <!-- Slides will be injected here -->
+  <!-- Navbar -->
+  <header class="navbar" style="background: rgba(255, 253, 248, 0.95);">
+    <div class="container nav-content">
+      <div class="logo">
+        <a href="index.html">
+          <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="श्री भागवत कथामृत">
+        </a>
+      </div>
+      <button class="menu-btn toggle-drawer">
+        <i data-lucide="menu" style="width: 28px; height: 28px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer Menu -->
+  <div class="drawer-overlay close-drawer"></div>
+  <aside class="drawer-menu">
+    <div class="drawer-header">
+      <button class="drawer-close close-drawer"><i data-lucide="x" style="width: 28px; height: 28px;"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link"><i data-lucide="home"></i> मुख्य पृष्ठ</a>
+      <a href="read.html" class="drawer-link"><i data-lucide="book-open"></i> पुस्तक पढ़ें</a>
+      <a href="know-bhagwat.html" class="drawer-link"><i data-lucide="compass"></i> भागवत को जानें</a>
+      <a href="index.html#features" class="drawer-link"><i data-lucide="info"></i> विशेषताएँ</a>
+      <a href="index.html#author" class="drawer-link"><i data-lucide="user"></i> लेखक</a>
+      <a href="contact.html" class="drawer-link"><i data-lucide="phone"></i> संपर्क</a>
+    </nav>
+    <div class="drawer-help-card">
+      <h4>सहायता चाहिए?</h4>
+      <p>पुस्तक संबंधी जानकारी हेतु संपर्क करें</p>
+      <a href="tel:+919828039262" class="btn-call"><i data-lucide="phone-call"></i> +91 98280 39262</a>
+    </div>
+  </aside>
+
+  <!-- Reader Section -->
+  <div class="reader-wrapper">
+    <div class="flipbook-container" id="flipbook-container">
+      <div class="flipbook" id="flipbook">
+        
+        <!-- Cover -->
+        <div class="page" data-density="hard">
+          <div style="width: 100%; height: 100%; background-image: url('front .jpeg'); background-size: cover; background-position: center;"></div>
+        </div>
+
+        <!-- Inner Pages -->
+        <!-- Generate dynamically or explicitly -->
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_0.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_1.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_2.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_3.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_4.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_5.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_6.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_7.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_8.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_9.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_10.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_11.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_12.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_13.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_14.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_15.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_16.jpg'); background-size: 100% 100%;"></div></div>
+        <div class="page"><div style="width: 100%; height: 100%; background-image: url('book_page_17.jpg'); background-size: 100% 100%;"></div></div>
+
+        <!-- CTA Page -->
+        <div class="page">
+          <div style="width: 100%; height: 100%; background: #fffdf8; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+            <img src="WhatsApp Image 2026-05-20 at 9.26.41 AM.png" alt="Logo" style="height: 100px; margin-bottom: 30px;">
+            <h2 style="color: var(--primary-peacock); font-size: 1.5rem; margin-bottom: 20px;">संपूर्ण कथा पढ़ें</h2>
+            <p style="color: var(--text-dark-green); margin-bottom: 30px; font-size: 1.1rem;">आज ही पुस्तक प्राप्त करें और परिवार सहित पाठ करें।</p>
+            <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" class="btn btn-gold" style="font-size: 1rem; padding: 12px 24px;">
+              अभी पुस्तक प्राप्त करें
+            </a>
+          </div>
+        </div>
+
+        <!-- Back Cover -->
+        <div class="page" data-density="hard">
+          <div style="width: 100%; height: 100%; background-image: url('back1.png'); background-size: cover; background-position: center;"></div>
+        </div>
+        
       </div>
     </div>
-    
-    <!-- Custom Controls -->
-    <div class="slider-controls">
-      <button class="nav-btn" id="btn-prev"><i data-lucide="chevron-left"></i></button>
-      <button class="nav-btn" id="btn-next"><i data-lucide="chevron-right"></i></button>
+
+    <!-- Navigation Controls -->
+    <div class="reader-controls">
+      <button class="reader-btn" id="btn-prev"><i data-lucide="chevron-left"></i></button>
+      <button class="reader-btn" id="btn-next"><i data-lucide="chevron-right"></i></button>
     </div>
   </div>
 
-  <!-- Global Floating CTAs -->
-  <div class="global-floating-ctas">
-    <!-- Order CTA -->
-    <a href="https://wa.me/919828039262?text=जय श्री कृष्ण 🙏 मुझे श्री भागवत कथामृत पुस्तक प्राप्त करनी है।" target="_blank" class="float-cta-btn">
-      <div class="float-bubble order">जय श्री कृष्ण 🙏 अपनी पुस्तक प्राप्त करें</div>
-      <div class="float-icon-wrapper order">
-        <i data-lucide="shopping-bag" style="color: white; width: 24px; height: 24px;"></i>
-      </div>
-    </a>
-  </div>
-
+  <script src="script.js"></script>
   <script>
     lucide.createIcons();
 
-    const wrapperEl = document.getElementById('swiper-wrapper');
-    const loadingText = document.getElementById('loading-text');
-    const swiperContainer = document.getElementById('main-swiper');
-
-    let pageImages = [
-      'front%20.jpeg',    // Cover
-      'book_page_0.jpg',
-      'book_page_1.jpg',
-      'book_page_2.jpg',
-      'book_page_3.jpg',
-      'book_page_4.jpg',
-      'book_page_5.jpg',
-      'book_page_6.jpg',
-      'book_page_7.jpg',
-      'book_page_8.jpg',
-      'book_page_9.jpg',
-      'book_page_10.jpg',
-      'book_page_11.jpg',
-      'book_page_12.jpg',
-      'book_page_13.jpg',
-      'book_page_14.jpg',
-      'book_page_15.jpg',
-      'book_page_16.jpg',
-      'book_page_17.jpg'
-    ];
-
-    async function initSlider() {
-      try {
-        // Preload cover
-        const coverImg = new Image();
-        coverImg.src = 'front%20.jpeg';
-        await new Promise((resolve) => {
-          coverImg.onload = resolve;
-          coverImg.onerror = resolve;
+    // Initialize PageFlip
+    document.addEventListener('DOMContentLoaded', function() {
+      const flipbookEl = document.getElementById('flipbook');
+      if(flipbookEl) {
+        
+        // Single page mode explicitly forced for mobile-first true reading
+        const isMobile = window.innerWidth <= 768;
+        
+        const pageFlip = new St.PageFlip(flipbookEl, {
+          width: 400, // Base width
+          height: 600, // Base height
+          size: "stretch",
+          minWidth: 300,
+          maxWidth: 600,
+          minHeight: 400,
+          maxHeight: 900,
+          showCover: true,
+          mobileScrollSupport: true,
+          usePortrait: true, // Forces single page view
+          maxShadowOpacity: 0.5,
         });
 
-        // Add Image Slides
-        pageImages.forEach(src => {
-          const slideDiv = document.createElement('div');
-          slideDiv.className = 'swiper-slide';
-          slideDiv.innerHTML = `<img src="${src}" alt="Page">`;
-          wrapperEl.appendChild(slideDiv);
-        });
+        // Load pages
+        pageFlip.loadFromHTML(document.querySelectorAll('.page'));
 
-        // Add Final CTA Page (With adjusted smaller fonts and padding)
-        const finalPage = document.createElement('div');
-        finalPage.className = 'swiper-slide';
-        finalPage.innerHTML = `
-          <div class="final-cta-page">
-            <h2 class="top">आगे पढ़ने के लिए</h2>
-            <h2 class="bot">पुस्तक प्राप्त करें</h2>
-            <p class="desc">इस दिव्य पुस्तक को अपने घर<br>मंगवाने के लिए अभी ऑर्डर करें</p>
-            <img class="book" src="front%20.jpeg" alt="Book">
-            <a href="https://wa.me/919828039262?text=नमस्ते 🙏 मुझे श्री भागवत कथामृत पुस्तक ऑर्डर करनी है।" target="_blank" class="btn-wa-book">
-              <i data-lucide="book-open" style="width: 18px; height: 18px;"></i> अभी प्राप्त करें
-            </a>
-            <p class="thanks">धन्यवाद!<br><span style="font-size: 0.95rem;">— जय श्री कृष्ण —</span></p>
-          </div>
-        `;
-        wrapperEl.appendChild(finalPage);
-
-        // Add Back Cover
-        const backCover = document.createElement('div');
-        backCover.className = 'swiper-slide';
-        backCover.innerHTML = `<img src="back1.png" alt="Back Cover">`;
-        wrapperEl.appendChild(backCover);
-
-        // Re-init lucide icons
-        lucide.createIcons();
-
-        // Reveal
-        loadingText.style.display = 'none';
-        swiperContainer.style.display = 'block';
-
-        // Initialize Swiper (clean PDF slide style)
-        const swiper = new Swiper('.mySwiper', {
-          effect: 'slide', 
-          speed: 600, 
-          spaceBetween: 20, 
-          grabCursor: true,
-          navigation: {
-            nextEl: '#btn-next',
-            prevEl: '#btn-prev',
-          }
-        });
-
-      } catch (error) {
-        console.error("Error initializing slider:", error);
+        // Controls
+        document.getElementById('btn-prev').addEventListener('click', () => pageFlip.flipPrev());
+        document.getElementById('btn-next').addEventListener('click', () => pageFlip.flipNext());
       }
-    }
-
-    initSlider();
+    });
   </script>
 </body>
 </html>
